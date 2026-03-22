@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Papers</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: white;
+            line-height: 1.4;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        .paper-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+
+        .paper-title {
+            color: #1a0dab;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .paper-title.no-expand {
+            cursor: default;
+            color: #333;
+        }
+
+        .paper-title:hover {
+            text-decoration: underline;
+        }
+
+        .paper-title.no-expand:hover {
+            text-decoration: none;
+        }
+
+        .paper-details {
+            color: #666;
+            margin: 3px 0;
+            font-size: 14px;
+        }
+
+        .paper-details em {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .paper-links {
+            margin: 8px 0;
+            font-size: 13px;
+        }
+
+        .paper-links a {
+            color: #1a0dab;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .paper-links a:hover {
+            text-decoration: underline;
+        }
+
+        .button-link {
+            color: #1a0dab;
+            cursor: pointer;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .button-link:hover {
+            text-decoration: underline;
+        }
+
+        .abstract {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #1a0dab;
+            line-height: 1.5;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .abstract.show {
+            display: block;
+        }
+
+        .presentations {
+            font-size: 13px;
+            color: #555;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
+        .award {
+            font-size: 13px;
+            color: #d73027;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .expand-icon {
+            font-size: 12px;
+            margin-left: 5px;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        /* Simple "NEW" badge */
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 10px;
+            background: #fff3cd;
+            color: #7a5b00;
+            border: 1px solid #ffe69c;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Published Papers Section -->
+<div class="section">
+    <h2 class="section-title">Published Papers</h2>
+
+    <div class="paper-item">
+        <a href="https://doi.org/10.1093/rfs/hhaf096" target="_blank" class="paper-title">
+            Nonbank Lending and the Transmission of Monetary Policy
+        </a>
+        <div class="paper-details">
+        <em>The Review of Financial Studies</em>, forthcoming, with Denis Gorea.
+        </div>
+
+        <div class="paper-links">
+            📄 <span class="button-link" onclick="toggleAbstract('abstract1', this)">Abstract</span>
+            📑 <a href="https://academic.oup.com/rfs/advance-article-abstract/doi/10.1093/rfs/hhaf096/8320039" target="_blank">Published Version</a>
+            📑 <a href="https://dom-dc.github.io/gsites-dcucic/CG_NonbankLending_accepted.pdf" target="_blank">Pre-published Version</a>
+            📅 <span class="button-link" onclick="togglePresentations('presentations1', this)">Selected Presentations</span>
+        </div>
+        <div id="abstract1" class="abstract">
+            We analyze the role of nonbank lenders in the transmission of monetary policy using data on the universe of unsecured credit to firms and households in Denmark. Nonbanks increase their credit supply after a monetary contraction, both relative to banks and in absolute terms. The increase in nonbank lending is financed through increased long-term debt. A model with segmented debt markets featuring differential investor rate sensitivities rationalizes these findings. Nonbank credit insulates corporate investment and household consumption from monetary contractions, with positive spillovers extending beyond nonbank clients through industry and geographic channels.
+        </div>
+        <div id="presentations1" class="abstract">
+            <strong>Selected presentations:</strong> European University Institute, CEMFI, IBEFA Young Economist Seminar Series, Midwest Finance Association Annual Meeting 2022, SFS Cavalcade North America 2022, 8th Emerging Scholars in Banking and Finance Conference, Federal Reserve Board, Challenges for Financial Intermediaries conference (Deutsche Bundesbank), 9th IWH-FIN-FIRE Workshop (IWH Halle)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S1386418121000434" target="_blank" class="paper-title">
+            Central Clearing and Loss Allocation Rules
+        </a>
+        <div class="paper-details">
+            <em>Journal of Financial Markets</em>, Vol 59, June 2022, 100662
+        </div>
+        <div class="paper-links">
+            📄 <span class="button-link" onclick="toggleAbstract('abstract2', this)">Abstract</span>
+            📑 <a href="https://www.sciencedirect.com/science/article/abs/pii/S1386418121000434" target="_blank">Published Version</a>
+            📑 <a href="https://dom-dc.github.io/gsites-dcucic/DC_CCPs_LossAllocation_April2021.pdf" target="_blank">Pre-published Version</a>
+        </div>
+        <div id="abstract2" class="abstract">
+            I study the effects of central clearing in over-the-counter derivative markets in a simple model of derivative trading. When risk-sharing is limited by moral hazard problems facing protection sellers, central counterparties (CCPs) facilitate risk-sharing by mutualizing idiosyncratic counterparty risk and economizing on costly margin calls. When clearing members' defaults are correlated, CCPs mutualize losses across its members. CCPs facing their own moral hazard problems can be induced to manage risk prudently by absorbing losses with CCP capital. A clearing fee can compensate CCPs for raising costly capital but may be prohibitively costly, warranting a return to bilateral trading.
+        </div>
+    </div>
+</div>
+
+<!-- Working Papers Section -->
+<div class="section">
+    <h2 class="section-title">Working Papers</h2>
+
+    <!-- MOVED TO TOP + NEW DRAFT LINK -->
+    <div class="paper-item">
+        <a href="javascript:void(0)" class="paper-title" onclick="toggleAbstract('abstract4', this)">
+            Market-Priced Savings, Bank Deposit Market Power, and Monetary Policy Transmission <span class="expand-icon">▼</span>
+        </a>
+        <div class="paper-details">
+            (with Glenn Schepens and Christoph Basten)
+        </div>
+        <div class="paper-links">
+            <span class="badge">NEW draft</span>
+            📄 <span class="button-link" onclick="toggleAbstract('abstract4', this)">Abstract</span>
+            <!-- Prefer raw=1 so it opens as a PDF -->
+            📑 <a href="https://dom-dc.github.io/gsites-dcucic/BCS_Jan26.pdf?raw=1" target="_blank">Draft (January 2026)</a>
+        </div>
+        <div id="abstract4" class="abstract">
+            We show that depositors' investments into equities and debt securities (market-priced savings, or MPS) shape deposit market power and monetary policy transmission. Using administrative data covering all deposit accounts in Denmark matched to each depositor's complete financial portfolio, we find banks pass through 2.5 percentage points more of policy rate changes in municipalities where their depositors hold more MPS. Despite this higher pass-through, deposit rates still lag policy rates: MPS holders respond by reducing deposits 3.4 percentage points more per 100 basis point increase. These outflows propagate to credit supply, with high-MPS banks reducing lending 1.5 percentage points more per 100 basis points of tightening. Evidence from 175 euro area banks confirms these patterns, revealing that competition from outside the banking system constrains deposit pricing beyond traditional market concentration.
+        </div>
+        <div class="presentations">
+            <strong>Selected presentations:</strong> Deutsche Bundesbank–IWH–CEPR "Future of Banking" conference*, ECB-DG Research*, the 2025 "Finance in the Tuscan Hills" workshop*, CEMFI, Universidad Carlos III de Madrid; 2026 WFA Meeting (scheduled)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <a href="javascript:void(0)" class="paper-title" onclick="toggleAbstract('abstract3', this)">
+            Distortive Effects of Deposit Insurance: Administrative Evidence from Deposit and Loan Accounts <span class="expand-icon">▼</span>
+        </a>
+        <div class="paper-details">
+            (with Rajkamal Iyer, Sotirios Kokas, Stefano Pica, and Jose Luis Peydro)
+        </div>
+        <div class="paper-links">
+            📄 <span class="button-link" onclick="toggleAbstract('abstract3', this)">Abstract</span>
+            📑 <span class="button-link">Draft coming soon</span>
+        </div>
+        <div id="abstract3" class="abstract">
+            We study how increasing deposit insurance coverage during a crisis distorts deposit and credit allocation. Exploiting a reform of Denmark's deposit insurance scheme during the Global Financial Crisis with comprehensive administrative datasets, we analyze the effects on deposit allocation. We find that individual depositors impose market discipline on weaker banks through withdrawals of uninsured deposits, but expanded insurance coverage disrupts this mechanism. This disproportionately benefits weaker banks, enabling them to expand lending to lower-quality firms that subsequently default without appropriate risk pricing. Our results highlight the trade-off between short-term financial stability and the costs of increasing deposit insurance coverage.
+        </div>
+        <div class="presentations">
+            <strong>Selected presentations (including scheduled):</strong> Fed Board*, "Rethinking Optimal Deposit Insurance" conference (Yale)*, University of Kentucky Finance Conference, International Monetary Fund, BIS-CEPR-SCG-SFI Conference on Financial Intermediation (Gerzensee), Conference on "Bank liquidity" (BIS), 17th NY Fed / NYU Stern Conference on Financial Intermediation*, 2024 OCC Bank Research Symposium, Banco de Portugal and CEPR Conference on Financial Intermediation (Lisbon), Annual ECB Banking Supervision Research Conference, MoFiR workshop on banking* (London), CEMFI*, Bundesbank Conference on Markets and Intermediaries, Fed Chicago, Barcelona Summer Forum 2025, FIRS 2025, NBER Summer Institute Corporate Finance 2025*<br>
+            <span style="font-size: 12px; color: #888;">* indicates presentations by co-authors</span>
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <a href="javascript:void(0)" class="paper-title" onclick="toggleAbstract('abstract5', this)">
+            Inside Bail-Ins: Uninsured Depositors, Losses, and Economic Consequences <span class="expand-icon">▼</span>
+        </a>
+        <div class="paper-details">
+            (with Clara Martínez-Toledano and Rajkamal Iyer)
+        </div>
+        <div class="paper-links">
+            📄 <span class="button-link" onclick="toggleAbstract('abstract5', this)">Abstract</span>
+            📑 <span class="button-link">Draft coming soon</span>
+        </div>
+        <div id="abstract5" class="abstract">
+            This paper studies the real effects of bail-ins on uninsured retail depositors, their firms and their workers. We exploit the unique bail-ins of two Danish banks during the 2008 global financial crisis, after which their depositors lost part of their uninsured deposits. Using administrative data covering all retail depositors in Danish banks, we find that uninsured depositors at bailed-in banks experienced a larger decrease in consumption after the bail-in than uninsured depositors at surviving banks. This effect was mainly driven by self-employed uninsured depositors, who use their personal deposits as working capital to run their businesses, and not by non-self-employed uninsured depositors, who are rich and diversified enough to smooth out their consumption after the bail-in. Firms owned and workers employed by uninsured self-employed individuals at bailed-in banks did also suffer more after the bail-in relative to firms owned and workers employed by uninsured self-employed individuals at surviving banks.
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <a href="https://dom-dc.github.io/gsites-dcucic/DC_LiquidityRiskMutualFunds_March25.pdf" target="_blank" class="paper-title">
+            Liquidity Regulation and Fire Sales in Mutual Funds
+        </a>
+        <div class="paper-details">
+            March 2025
+        </div>
+        <div class="award">
+            🏆 Winner of the 2021 CNMV Award to the Best Paper on Regulation presented at the XXVIII Finance Forum of the Spanish Finance Association
+        </div>
+        <div class="paper-links">
+            📄 <span class="button-link" onclick="toggleAbstract('abstract6', this)">Abstract</span>
+            📑 <a href="https://dom-dc.github.io/gsites-dcucic/DC_LiquidityRiskMutualFunds_March25.pdf" target="_blank">Draft</a>
+        </div>
+        <div id="abstract6" class="abstract">
+            We model interactions between investors, mutual funds, and liquidity providers to compare regulatory approaches for managing fund liquidity risk. Investor redemptions trigger asset sales by mutual funds, potentially causing fire sales when endogenous market liquidity becomes scarce. A pecuniary externality arises as liquidity providers fail to internalize price impacts, resulting in inefficiently low market liquidity. Liquidity requirements increase system-wide resilience despite partially crowding out private liquidity provision. In contrast, redemption restrictions undermine liquidity providers' incentives, potentially increasing fire-sale risk and reducing welfare. Effective regulation depends on its general equilibrium impact on liquidity providers' ex-ante incentives, not merely its direct effect on funds.
+        </div>
+        <div class="presentations">
+            <strong>Selected presentations:</strong> Copenhagen Business School, 7th Emerging Scholars in Banking and Finance Conference, BCU-RIDGE Financial Stability Workshop
+        </div>
+    </div>
+</div>
+
+<!-- Work in Progress Section -->
+<div class="section">
+    <h2 class="section-title">Work in Progress</h2>
+
+    <div class="paper-item">
+        <div class="paper-title no-expand">
+            Equity Depositors
+        </div>
+        <div class="paper-details">
+            (with Farzad Saidi, Daniel Streitz, and Ulf Nielsson)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <div class="paper-title no-expand">
+            Micro-evidence on the pass-through of deposit rates
+        </div>
+        <div class="paper-details">
+            (with Rajkamal Iyer and Tarun Ramadorai)
+        </div>
+    </div>
+</div>
+
+<!-- Permanent Working Papers Section -->
+<div class="section">
+    <h2 class="section-title">Permanent Working Papers</h2>
+
+    <div class="paper-item">
+        <a href="https://www.nationalbanken.dk/media/cjtbnmb4/jmp-cucic.pdf" target="_blank" class="paper-title">
+            Corporate Investment and Cash Holdings under Financing Shocks
+        </a>
+        <div class="paper-details">
+            (September 2020)
+        </div>
+    </div>
+</div>
+
+<!-- Selected Discussions Section -->
+<div class="section">
+    <h2 class="section-title">Selected Discussions</h2>
+
+    <div class="paper-item">
+        <div class="paper-title no-expand">
+            Favara, Minoiu, and Perez-Orive - "Zombie Lending to U.S. Firms"
+        </div>
+        <div class="paper-details">
+            (<em>6th Endless Summer Conference on Financial Intermediation and Corporate Finance</em>, 2024)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <div class="paper-title no-expand">
+            Altavilla, Gürkaynak, and Quaedvlieg - "The Macro and Micro of the External Finance Premium"
+        </div>
+        <div class="paper-details">
+            (<em>Monetary Policy and Financial Intermediation conference by Banca d'Italia - Norges Bank - Collegio Carlo Alberto</em>, 2023)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <div class="paper-title no-expand">
+            Sarto and Wang - "The Secular Decline in Interest Rates and the Rise of Shadow Banks"
+        </div>
+        <div class="paper-details">
+            (<em>Swiss Winter Conference Gerzensee</em>, 2023)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <div class="paper-title no-expand">
+            Agarwal et al. - "Lending by Servicing: How Shadow Banks Dampen Monetary Policy Transmission"
+        </div>
+        <div class="paper-details">
+            (<em>Emerging Scholars in Banking and Finance conference</em>, 2022)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <div class="paper-title no-expand">
+            Dagostino, Gao, and Ma - "Partisanship in Loan Pricing"
+        </div>
+        <div class="paper-details">
+            (<em>European Finance Association Annual Meeting</em>, 2022)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <div class="paper-title no-expand">
+            Saunders et al. - "Corporate Loan Spreads and Economic Activity"
+        </div>
+        <div class="paper-details">
+            (<em>Lenzerheide conference</em>, 2022)
+        </div>
+    </div>
+</div>
+
+<!-- Policy Writings Section -->
+<div class="section">
+    <h2 class="section-title">Policy Writings</h2>
+
+<div class="paper-item">
+  <a href="https://www.nationalbanken.dk/en/news-and-knowledge/publications-and-speeches/analysis/2025/higher-defence-spending-may-increase-capacity-pressures-moderately" target="_blank" class="paper-title">
+    The economic effects of higher defense spending in Denmark
+  </a>
+  <div class="paper-details">
+    (Economic Analysis - September 2025)
+  </div>
+</div>
+
+
+    <div class="paper-item">
+        <a href="https://www.nationalbanken.dk/media/dc0ffbzs/the-corporate-investment-channel-of-monetary-policy-in-denmark-2.pdf" target="_blank" class="paper-title">
+            The corporate investment channel of monetary policy in Denmark
+        </a>
+        <div class="paper-details">
+            (Economic Memo - June 2024)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <a href="https://www.nationalbanken.dk/en/news-and-knowledge/publications-and-speeches/archive-publications/2022/evaluating-the-macroprudential-stance-in-a-growth-at-risk-framework" target="_blank" class="paper-title">
+            Evaluating the macroprudential stance in a growth-at-risk framework
+        </a>
+        <div class="paper-details">
+            (Economic Memo - November 2022)
+        </div>
+    </div>
+
+    <div class="paper-item">
+        <a href="https://www.nationalbanken.dk/media/tcahh1kq/economic-memo-nr-8-2021.pdf" target="_blank" class="paper-title">
+            Nonbanks, credit provision, and the transmission of monetary policy
+        </a>
+        <div class="paper-details">
+            (Economic Memo - November 2021)
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleAbstract(abstractId, titleElement) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const abstract = document.getElementById(abstractId);
+        const icon = titleElement ? titleElement.querySelector('.expand-icon') : null;
+
+        if (abstract.classList.contains('show')) {
+            abstract.classList.remove('show');
+            if (icon) icon.classList.remove('rotated');
+        } else {
+            // Close any other open abstracts (and presentation blocks that use the same .abstract class)
+            const allAbstracts = document.querySelectorAll('.abstract');
+            const allIcons = document.querySelectorAll('.expand-icon');
+
+            allAbstracts.forEach(abs => abs.classList.remove('show'));
+            allIcons.forEach(ic => ic.classList.remove('rotated'));
+
+            abstract.classList.add('show');
+            if (icon) icon.classList.add('rotated');
+        }
+    }
+
+    function togglePresentations(presentationsId, buttonElement) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const presentations = document.getElementById(presentationsId);
+
+        if (presentations.classList.contains('show')) {
+            presentations.classList.remove('show');
+            buttonElement.textContent = 'Selected Presentations';
+        } else {
+            // Close any other open blocks
+            const allAbstracts = document.querySelectorAll('.abstract');
+            const allIcons = document.querySelectorAll('.expand-icon');
+
+            allAbstracts.forEach(abs => abs.classList.remove('show'));
+            allIcons.forEach(ic => ic.classList.remove('rotated'));
+
+            presentations.classList.add('show');
+            buttonElement.textContent = 'Hide Presentations';
+        }
+    }
+</script>
+</body>
+</html>
