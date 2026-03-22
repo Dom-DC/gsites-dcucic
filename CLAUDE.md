@@ -4,9 +4,10 @@ Empirical financial economist at Danmarks Nationalbank. This repo hosts the HTML
 
 ## How it works
 
-- HTML files here are served via **GitHub Pages** at `https://dom-dc.github.io/gsites-dcucic/`
-- Each file is embedded as an iframe in the corresponding **Google Sites** tab
-- Edits take effect after pushing to GitHub (may take ~1 min for GitHub Pages cache)
+- GitHub Pages serves from the **`gh-pages`** branch at `https://dom-dc.github.io/gsites-dcucic/`
+- Each HTML file is embedded as an iframe in the corresponding **Google Sites** tab
+- Edits take effect after pushing to `gh-pages` (may take ~1 min for GitHub Pages cache)
+- Make sure you are on the `gh-pages` branch when editing and pushing
 
 ## File → Google Sites mapping
 
