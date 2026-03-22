@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominic Cucic - Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: white;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .header-section {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            align-items: start;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 240px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .header-content h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #1a0dab;
+        }
+
+        .header-content .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .quick-links-mobile {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .quick-link {
+            background: #1a0dab;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+        }
+
+        .quick-link:hover {
+            background: #1a0dab;
+            opacity: 0.9;
+        }
+
+        .intro-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .intro-text a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+
+        .intro-text a:hover {
+            text-decoration: underline;
+        }
+
+        .research-focus {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #1a0dab;
+            margin: 30px 0;
+        }
+
+        .research-focus h2 {
+            font-size: 20px;
+            margin: 0 0 15px 0;
+            color: #333;
+        }
+
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .research-area {
+            font-size: 15px;
+        }
+
+        .research-area strong {
+            color: #1a0dab;
+        }
+
+        .updates-section {
+            margin: 40px 0;
+        }
+
+        .updates-section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .update-category {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .update-category h3 {
+            font-size: 18px;
+            color: #1a0dab;
+            margin: 0 0 15px 0;
+        }
+
+        .update-item {
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .update-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .update-date {
+            font-weight: 500;
+            color: #555;
+        }
+
+        .contact-section {
+            background-color: #f5f5f5;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            font-size: 20px;
+            margin: 0 0 15px 0;
+            color: #333;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-info div {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .contact-info a {
+            color: #1a0dab;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            .quick-links-mobile {
+                display: grid;
+            }
+
+            .research-areas {
+                grid-template-columns: 1fr;
+            }
+
+            .updates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <img src="https://dom-dc.github.io/gsites-dcucic/DC_foto.jpg" alt="Dominic Cucic" class="profile-photo">
+
+            <div class="header-content">
+                <h1>Dominic Cucic</h1>
+                <div class="title">Senior Research Economist, Danmarks Nationalbank</div>
+
+                <div class="quick-links-mobile">
+                    <a href="https://sites.google.com/view/dominiccucic/research" class="quick-link">View My Research</a>
+                    <a href="https://sites.google.com/view/dominiccucic/curriculum-vitae" class="quick-link">Download CV</a>
+                </div>
+
+                <div class="intro-text">
+                    I study how financial intermediaries shape monetary policy transmission and financial stability. My recent research focuses on <strong>nonbank lenders</strong> and the market for bank <strong>deposits</strong>, analyzing their roles in shaping credit provision and macroeconomic outcomes. My work on nonbank lending is forthcoming at <em><a href="https://dom-dc.github.io/gsites-dcucic/CG_NonbankLending_accepted.pdf" target="_blank">The Review of Financial Studies</a></em>.
+                </div>
+
+                <div class="intro-text">
+                    My research combines large-scale administrative datasets with economic theory to understand the evolving landscape of financial intermediation and its implications for monetary policy effectiveness and financial stability.
+                </div>
+            </div>
+        </div>
+
+        <div class="research-focus">
+            <h2>Current Research Focus</h2>
+            <div class="research-areas">
+                <div class="research-area">
+                    <strong>Nonbank Lending:</strong> How alternative lenders affect monetary policy transmission and provide credit during financial stress
+                </div>
+                <div class="research-area">
+                    <strong>Deposit Markets:</strong> The role of deposit insurance, market discipline, and bail-ins in banking stability
+                </div>
+                <div class="research-area">
+                    <strong>Deposit Rate Setting:</strong> How household and bank heterogeneity determine deposit rates and their implications for monetary transmission
+                </div>
+            </div>
+        </div>
+
+        <div class="updates-section">
+            <h2>Recent Updates</h2>
+
+            <div class="updates-grid">
+                <div class="update-category">
+                    <h3>Recent Publications</h3>
+                    <div class="update-item">
+                        <span class="update-date">January 2026:</span> New draft of <a href="https://dom-dc.github.io/gsites-dcucic/BCS_Jan26.pdf?raw=1" target="_blank">"Market-Priced Savings, Bank Deposit Market Power, and Monetary Policy Transmission"</a>
+
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">2025:</span> "Nonbank Lending and the Transmission of Monetary Policy" forthcoming at <em>The Review of Financial Studies</em>
+                    </div>
+                </div>
+
+                <div class="update-category">
+                    <h3>Recent & Upcoming Presentations</h3>
+                    <div class="update-item">
+                        <span class="update-date">June 2026:</span> WFA Meeting
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">May 2026:</span> 1st Workshop on Financial Intermediation at Banco de España
+                    </div>
+<div class="update-item">
+                        <span class="update-date">March 2026:</span> Bundesbank-HU University: 4th Workshop on Financial Intermediation
+                    </div>
+
+                </div>
+
+                <!-- Policy Work box removed entirely -->
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <div>
+                    <strong>Email:</strong> <a href="mailto:dc@nationalbanken.dk">dc@nationalbanken.dk</a><br>
+                    <strong>Phone:</strong> (+45) 33 63 63 81
+                </div>
+                <div>
+                    <strong>Address:</strong><br>
+                    Research Department<br>
+                    Danmarks Nationalbank<br>
+                    Langelinie Allé 47<br>
+                    2100 Copenhagen, Denmark
+                </div>
+                <div>
+                    <strong>Links:</strong><br>
+                    <a href="https://sites.google.com/view/dominiccucic/" target="_blank">Personal Website</a><br>
+                    <a href="https://dom-dc.github.io/gsites-dcucic/CV_DC.pdf" target="_blank">CV (PDF)</a><br>
+                    <a href="https://scholar.google.com/citations?user=tT0Tn-0AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            This is my personal website and the views expressed here do not necessarily reflect those of Danmarks Nationalbank.
+        </div>
+    </div>
+</body>
+</html>
