@@ -33,7 +33,7 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             margin: 0;
-            padding: 20px;
+            padding: 0 20px 20px 20px;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: white;
             line-height: 1.5;
@@ -74,32 +74,50 @@
             font-style: italic;
         }
 
-        .mobile-nav {
-            display: none;
+        .site-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1a0dab;
+            padding: 0 4px;
+            margin: 0 -20px 28px -20px;
+            width: calc(100% + 40px);
             position: sticky;
             top: 0;
             z-index: 100;
-            background: #1a0dab;
-            margin: 0 -20px;
-            width: calc(100% + 40px);
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
         }
 
-        .mobile-nav a {
-            flex: 1;
-            color: rgba(255, 255, 255, 0.7);
+        .nav-name {
+            color: white;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 0 16px;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.72);
             text-decoration: none;
-            text-align: center;
-            padding: 12px 0;
+            padding: 13px 18px;
             font-size: 14px;
             font-weight: 500;
             letter-spacing: 0.01em;
             border-bottom: 2px solid transparent;
         }
 
-        .mobile-nav a.active {
+        .nav-links a.active {
             color: white;
             border-bottom-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .nav-links a:hover {
+            color: white;
         }
 
         .intro-text {
@@ -233,12 +251,18 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 0;
+            .nav-name {
+                display: none;
             }
 
-            .mobile-nav {
-                display: flex;
+            .nav-links {
+                flex: 1;
+            }
+
+            .nav-links a {
+                flex: 1;
+                text-align: center;
+                padding: 12px 0;
             }
 
             .header-section {
@@ -267,10 +291,13 @@
     </style>
 </head>
 <body>
-    <nav class="mobile-nav">
-        <a href="https://dominiccucic.com/home.html" class="active">Home</a>
-        <a href="https://dominiccucic.com/research.html">Research</a>
-        <a href="https://dominiccucic.com/cv.html">CV</a>
+    <nav class="site-nav">
+        <span class="nav-name">Dominic Cucic</span>
+        <div class="nav-links">
+            <a href="https://dominiccucic.com/home.html" class="active">Home</a>
+            <a href="https://dominiccucic.com/research.html">Research</a>
+            <a href="https://dominiccucic.com/cv.html">CV</a>
+        </div>
     </nav>
 
     <div class="container">
