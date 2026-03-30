@@ -47,17 +47,22 @@
 
         /* ── Navigation ── */
         .site-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             background: #fff;
-            padding: 0 4px;
             margin: 0 -20px 36px -20px;
             width: calc(100% + 40px);
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .nav-name {
@@ -274,8 +279,13 @@
                 display: none;
             }
 
+            .nav-inner {
+                padding: 0;
+            }
+
             .nav-links {
                 flex: 1;
+                width: 100%;
             }
 
             .nav-links a {
@@ -311,11 +321,13 @@
 </head>
 <body>
     <nav class="site-nav">
-        <span class="nav-name">Dominic Cucic</span>
-        <div class="nav-links">
-            <a href="https://dominiccucic.com/home.html" class="active">Home</a>
-            <a href="https://dominiccucic.com/research.html">Research</a>
-            <a href="https://dominiccucic.com/cv.html">CV</a>
+        <div class="nav-inner">
+            <span class="nav-name">Dominic Cucic</span>
+            <div class="nav-links">
+                <a href="https://dominiccucic.com/home.html" class="active">Home</a>
+                <a href="https://dominiccucic.com/research.html">Research</a>
+                <a href="https://dominiccucic.com/cv.html">CV</a>
+            </div>
         </div>
     </nav>
 
@@ -325,7 +337,7 @@
 
             <div class="header-content">
                 <h1>Dominic Cucic</h1>
-                <div class="title">Senior Research Economist, Danmarks Nationalbank</div>
+                <div class="title">Senior Research Economist,<br>Danmarks Nationalbank</div>
 
                 <div class="intro-text">
                     I study how financial intermediaries shape monetary policy transmission and financial stability. My recent research focuses on <strong>nonbank lenders</strong> and the market for bank <strong>deposits</strong>, analyzing their roles in shaping credit provision and macroeconomic outcomes. My work on nonbank lending is forthcoming at <em><a href="https://dominiccucic.com/CG_NonbankLending_accepted.pdf" target="_blank">The Review of Financial Studies</a></em>.

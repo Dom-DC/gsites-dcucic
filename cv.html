@@ -35,16 +35,21 @@
 
     /* Site navigation */
     .site-nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       background: #fff;
-      padding: 0 4px;
       width: 100%;
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid #e0e0e0;
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .nav-name {
@@ -81,7 +86,8 @@
 
     @media (max-width: 768px) {
       .nav-name { display: none; }
-      .nav-links { flex: 1; }
+      .nav-inner { padding: 0; }
+      .nav-links { flex: 1; width: 100%; }
       .nav-links a { flex: 1; text-align: center; padding: 12px 0; }
     }
 
@@ -214,11 +220,13 @@
 
 <body>
   <nav class="site-nav">
-    <span class="nav-name">Dominic Cucic</span>
-    <div class="nav-links">
-      <a href="https://dominiccucic.com/home.html">Home</a>
-      <a href="https://dominiccucic.com/research.html">Research</a>
-      <a href="https://dominiccucic.com/cv.html" class="active">CV</a>
+    <div class="nav-inner">
+      <span class="nav-name">Dominic Cucic</span>
+      <div class="nav-links">
+        <a href="https://dominiccucic.com/home.html">Home</a>
+        <a href="https://dominiccucic.com/research.html">Research</a>
+        <a href="https://dominiccucic.com/cv.html" class="active">CV</a>
+      </div>
     </div>
   </nav>
 
@@ -227,7 +235,7 @@
     <h1 class="cv-name">Dominic Cucic</h1>
     <div class="cv-subtitle">CV (Shortened Web Version)</div>
     <div class="contact-info">
-      Senior Research Economist, Danmarks Nationalbank<br />
+      Senior Research Economist,<br>Danmarks Nationalbank<br />
       <a href="mailto:dc@nationalbanken.dk">dc@nationalbanken.dk</a> |
       <a href="https://dominiccucic.com" target="_blank" rel="noopener">dominiccucic.com</a><br />
       <strong>Full CV (PDF):</strong>

@@ -88,27 +88,25 @@
         .paper-links {
             margin: 8px 0;
             font-size: 14px;
+            color: #aaa;
         }
 
-        .paper-links a {
+        .paper-links a,
+        .paper-links .button-link {
             color: #1a0dab;
             text-decoration: none;
-            margin-right: 15px;
-        }
-
-        .paper-links a:hover {
-            text-decoration: underline;
-        }
-
-        .button-link {
-            color: #1a0dab;
             cursor: pointer;
-            text-decoration: none;
-            margin-right: 15px;
         }
 
-        .button-link:hover {
+        .paper-links a:hover,
+        .paper-links .button-link:hover {
             text-decoration: underline;
+        }
+
+        .paper-links .sep {
+            color: #bbb;
+            margin: 0 4px;
+            user-select: none;
         }
 
         .abstract {
@@ -153,17 +151,22 @@
 
         /* Site navigation */
         .site-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             background: #fff;
-            padding: 0 4px;
             margin: -20px -20px 36px -20px;
             width: calc(100% + 40px);
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 1px solid #e0e0e0;
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .nav-name {
@@ -201,8 +204,11 @@
         @media (max-width: 768px) {
             body { padding-top: 0; }
             .nav-name { display: none; }
-            .nav-links { flex: 1; }
+            .nav-inner { padding: 0; }
+            .nav-links { flex: 1; width: 100%; }
             .nav-links a { flex: 1; text-align: center; padding: 12px 0; }
+            .paper-item { margin-bottom: 20px; padding-bottom: 12px; }
+            .section { margin-bottom: 32px; }
         }
 
         /* Simple "NEW" badge */
@@ -223,11 +229,13 @@
 <body>
 
 <nav class="site-nav">
-    <span class="nav-name">Dominic Cucic</span>
-    <div class="nav-links">
-        <a href="https://dominiccucic.com/home.html">Home</a>
-        <a href="https://dominiccucic.com/research.html" class="active">Research</a>
-        <a href="https://dominiccucic.com/cv.html">CV</a>
+    <div class="nav-inner">
+        <span class="nav-name">Dominic Cucic</span>
+        <div class="nav-links">
+            <a href="https://dominiccucic.com/home.html">Home</a>
+            <a href="https://dominiccucic.com/research.html" class="active">Research</a>
+            <a href="https://dominiccucic.com/cv.html">CV</a>
+        </div>
     </div>
 </nav>
 
@@ -246,10 +254,13 @@
         </div>
 
         <div class="paper-links">
-            📄 <span class="button-link" onclick="toggleAbstract('abstract1', this)">Abstract</span>
-            📑 <a href="https://academic.oup.com/rfs/advance-article-abstract/doi/10.1093/rfs/hhaf096/8320039" target="_blank">Published Version</a>
-            📑 <a href="https://dominiccucic.com/CG_NonbankLending_accepted.pdf" target="_blank">Pre-published Version</a>
-            📅 <span class="button-link" onclick="togglePresentations('presentations1', this)">Selected Presentations</span>
+            <span class="button-link" onclick="toggleAbstract('abstract1', this)">Abstract</span>
+            <span class="sep">·</span>
+            <a href="https://academic.oup.com/rfs/advance-article-abstract/doi/10.1093/rfs/hhaf096/8320039" target="_blank">Published Version</a>
+            <span class="sep">·</span>
+            <a href="https://dominiccucic.com/CG_NonbankLending_accepted.pdf" target="_blank">Pre-published Version</a>
+            <span class="sep">·</span>
+            <span class="button-link" onclick="togglePresentations('presentations1', this)">Selected Presentations</span>
         </div>
         <div id="abstract1" class="abstract">
             We analyze the role of nonbank lenders in the transmission of monetary policy using data on the universe of unsecured credit to firms and households in Denmark. Nonbanks increase their credit supply after a monetary contraction, both relative to banks and in absolute terms. The increase in nonbank lending is financed through increased long-term debt. A model with segmented debt markets featuring differential investor rate sensitivities rationalizes these findings. Nonbank credit insulates corporate investment and household consumption from monetary contractions, with positive spillovers extending beyond nonbank clients through industry and geographic channels.
@@ -267,9 +278,11 @@
             <em>Journal of Financial Markets</em>, Vol 59, June 2022, 100662
         </div>
         <div class="paper-links">
-            📄 <span class="button-link" onclick="toggleAbstract('abstract2', this)">Abstract</span>
-            📑 <a href="https://www.sciencedirect.com/science/article/abs/pii/S1386418121000434" target="_blank">Published Version</a>
-            📑 <a href="https://dominiccucic.com/DC_CCPs_LossAllocation_April2021.pdf" target="_blank">Pre-published Version</a>
+            <span class="button-link" onclick="toggleAbstract('abstract2', this)">Abstract</span>
+            <span class="sep">·</span>
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1386418121000434" target="_blank">Published Version</a>
+            <span class="sep">·</span>
+            <a href="https://dominiccucic.com/DC_CCPs_LossAllocation_April2021.pdf" target="_blank">Pre-published Version</a>
         </div>
         <div id="abstract2" class="abstract">
             I study the effects of central clearing in over-the-counter derivative markets in a simple model of derivative trading. When risk-sharing is limited by moral hazard problems facing protection sellers, central counterparties (CCPs) facilitate risk-sharing by mutualizing idiosyncratic counterparty risk and economizing on costly margin calls. When clearing members' defaults are correlated, CCPs mutualize losses across its members. CCPs facing their own moral hazard problems can be induced to manage risk prudently by absorbing losses with CCP capital. A clearing fee can compensate CCPs for raising costly capital but may be prohibitively costly, warranting a return to bilateral trading.
@@ -291,9 +304,9 @@
         </div>
         <div class="paper-links">
             <span class="badge">NEW draft</span>
-            📄 <span class="button-link" onclick="toggleAbstract('abstract4', this)">Abstract</span>
-            <!-- Prefer raw=1 so it opens as a PDF -->
-            📑 <a href="https://dominiccucic.com/BCS_Jan26.pdf?raw=1" target="_blank">Draft (January 2026)</a>
+            <span class="button-link" onclick="toggleAbstract('abstract4', this)">Abstract</span>
+            <span class="sep">·</span>
+            <a href="https://dominiccucic.com/BCS_Jan26.pdf?raw=1" target="_blank">Draft (January 2026)</a>
         </div>
         <div id="abstract4" class="abstract">
             We show that depositors' investments into equities and debt securities (market-priced savings, or MPS) shape deposit market power and monetary policy transmission. Using administrative data covering all deposit accounts in Denmark matched to each depositor's complete financial portfolio, we find banks pass through 2.5 percentage points more of policy rate changes in municipalities where their depositors hold more MPS. Despite this higher pass-through, deposit rates still lag policy rates: MPS holders respond by reducing deposits 3.4 percentage points more per 100 basis point increase. These outflows propagate to credit supply, with high-MPS banks reducing lending 1.5 percentage points more per 100 basis points of tightening. Evidence from 175 euro area banks confirms these patterns, revealing that competition from outside the banking system constrains deposit pricing beyond traditional market concentration.
@@ -312,8 +325,9 @@
             (with Rajkamal Iyer, Sotirios Kokas, Stefano Pica, and Jose Luis Peydro)
         </div>
         <div class="paper-links">
-            📄 <span class="button-link" onclick="toggleAbstract('abstract3', this)">Abstract</span>
-            📑 <span class="button-link">Draft coming soon</span>
+            <span class="button-link" onclick="toggleAbstract('abstract3', this)">Abstract</span>
+            <span class="sep">·</span>
+            <span style="color:#999;">Draft coming soon</span>
         </div>
         <div id="abstract3" class="abstract">
             We study how increasing deposit insurance coverage during a crisis distorts deposit and credit allocation. Exploiting a reform of Denmark's deposit insurance scheme during the Global Financial Crisis with comprehensive administrative datasets, we analyze the effects on deposit allocation. We find that individual depositors impose market discipline on weaker banks through withdrawals of uninsured deposits, but expanded insurance coverage disrupts this mechanism. This disproportionately benefits weaker banks, enabling them to expand lending to lower-quality firms that subsequently default without appropriate risk pricing. Our results highlight the trade-off between short-term financial stability and the costs of increasing deposit insurance coverage.
@@ -332,8 +346,9 @@
             (with Clara Martínez-Toledano and Rajkamal Iyer)
         </div>
         <div class="paper-links">
-            📄 <span class="button-link" onclick="toggleAbstract('abstract5', this)">Abstract</span>
-            📑 <span class="button-link">Draft coming soon</span>
+            <span class="button-link" onclick="toggleAbstract('abstract5', this)">Abstract</span>
+            <span class="sep">·</span>
+            <span style="color:#999;">Draft coming soon</span>
         </div>
         <div id="abstract5" class="abstract">
             This paper studies the real effects of bail-ins on uninsured retail depositors, their firms and their workers. We exploit the unique bail-ins of two Danish banks during the 2008 global financial crisis, after which their depositors lost part of their uninsured deposits. Using administrative data covering all retail depositors in Danish banks, we find that uninsured depositors at bailed-in banks experienced a larger decrease in consumption after the bail-in than uninsured depositors at surviving banks. This effect was mainly driven by self-employed uninsured depositors, who use their personal deposits as working capital to run their businesses, and not by non-self-employed uninsured depositors, who are rich and diversified enough to smooth out their consumption after the bail-in. Firms owned and workers employed by uninsured self-employed individuals at bailed-in banks did also suffer more after the bail-in relative to firms owned and workers employed by uninsured self-employed individuals at surviving banks.
@@ -351,8 +366,9 @@
             🏆 Winner of the 2021 CNMV Award to the Best Paper on Regulation presented at the XXVIII Finance Forum of the Spanish Finance Association
         </div>
         <div class="paper-links">
-            📄 <span class="button-link" onclick="toggleAbstract('abstract6', this)">Abstract</span>
-            📑 <a href="https://dominiccucic.com/DC_LiquidityRiskMutualFunds_March25.pdf" target="_blank">Draft</a>
+            <span class="button-link" onclick="toggleAbstract('abstract6', this)">Abstract</span>
+            <span class="sep">·</span>
+            <a href="https://dominiccucic.com/DC_LiquidityRiskMutualFunds_March25.pdf" target="_blank">Draft</a>
         </div>
         <div id="abstract6" class="abstract">
             We model interactions between investors, mutual funds, and liquidity providers to compare regulatory approaches for managing fund liquidity risk. Investor redemptions trigger asset sales by mutual funds, potentially causing fire sales when endogenous market liquidity becomes scarce. A pecuniary externality arises as liquidity providers fail to internalize price impacts, resulting in inefficiently low market liquidity. Liquidity requirements increase system-wide resilience despite partially crowding out private liquidity provision. In contrast, redemption restrictions undermine liquidity providers' incentives, potentially increasing fire-sale risk and reducing welfare. Effective regulation depends on its general equilibrium impact on liquidity providers' ex-ante incentives, not merely its direct effect on funds.
