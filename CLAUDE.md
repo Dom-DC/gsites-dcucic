@@ -1,27 +1,22 @@
 # Personal Website — Dominic Cucic
 
-Empirical financial economist at Danmarks Nationalbank. This repo hosts the HTML for my Google Sites website.
+Empirical financial economist at Danmarks Nationalbank. This repo hosts the HTML for my personal website at [dominiccucic.com](https://dominiccucic.com).
 
 ## How it works
 
-- GitHub Pages serves from the **`gh-pages`** branch at `https://dom-dc.github.io/gsites-dcucic/`
-- Each HTML file is embedded as an iframe in the corresponding **Google Sites** tab
+- GitHub Pages serves from the **`gh-pages`** branch, with a custom domain configured via `CNAME` + Namecheap DNS
+- Live URLs:
+  - `https://dominiccucic.com/` → `home.html`
+  - `https://dominiccucic.com/research.html`
+  - `https://dominiccucic.com/cv.html`
+- `index.html` redirects the root URL to `home.html`
 - Edits take effect after pushing to `gh-pages` (may take ~1 min for GitHub Pages cache)
 - Make sure you are on the `gh-pages` branch when editing and pushing
-
-## File → Google Sites mapping
-
-| File | Google Sites tab | Live URL |
-|------|-----------------|----------|
-| `home.html` | Home | `https://dom-dc.github.io/gsites-dcucic/home.html` |
-| `research.html` | Research | `https://dom-dc.github.io/gsites-dcucic/research.html` |
-| `cv.html` | Curriculum Vitae | `https://dom-dc.github.io/gsites-dcucic/cv.html` |
 
 ## Editing workflow
 
 1. Edit the HTML file(s)
-2. Commit and push: `git add -A && git commit -m "description" && git push`
-3. The Google Sites iframe auto-updates
+2. Commit and push: `git add <files> && git commit -m "description" && git push`
 
 ## Adding a presentation
 
@@ -45,15 +40,15 @@ When the user says something like "Add [conference] for [paper]", update all 4 f
 - Add to the correct year's `<div class="cv-item-details">` (comma-separated list)
 - If the year doesn't exist yet, add a new `cv-item` block
 
-### 4. LaTeX CV — `/home/dcucic/Dropbox/Documents/Latex CV/CV_DC.tex`
+### 4. LaTeX CV — `/home/dominic/Dropbox/Documents/Latex CV/CV_DC.tex`
 - Find `\section*{Conference and Seminar Presentations}`
 - Add to the correct year's `\item \textbf{YEAR:}` line
 
 ### After all edits: compile and deploy
 ```bash
-cd "/home/dcucic/Dropbox/Documents/Latex CV" && pdflatex CV_DC.tex
-cp "/home/dcucic/Dropbox/Documents/Latex CV/CV_DC.pdf" /home/dcucic/Dropbox/Website/CV_DC.pdf
-cd /home/dcucic/Dropbox/Website && git add -A && git commit -m "Add [conference] presentation" && git push
+cd "/home/dominic/Dropbox/Documents/Latex CV" && pdflatex CV_DC.tex
+cp "/home/dominic/Dropbox/Documents/Latex CV/CV_DC.pdf" /home/dominic/Dropbox/Website/CV_DC.pdf
+cd /home/dominic/Dropbox/Website && git add home.html research.html cv.html CV_DC.pdf && git commit -m "Add [conference] presentation" && git push
 ```
 
 ## Style notes
@@ -61,4 +56,4 @@ cd /home/dcucic/Dropbox/Website && git add -A && git commit -m "Add [conference]
 - Primary accent color: `#1a0dab`
 - Font stack: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif`
 - Responsive breakpoint at 768px
-- Assets (images, PDFs) are also hosted in this repo and referenced via GitHub Pages URLs
+- Assets (images, PDFs) are hosted in this repo and served from `https://dominiccucic.com/`
