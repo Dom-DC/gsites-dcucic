@@ -131,6 +131,44 @@
             transform: rotate(180deg);
         }
 
+        /* Mobile navigation bar */
+        .mobile-nav {
+            display: none;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1a0dab;
+            margin: -20px -20px 20px -20px;
+            width: calc(100% + 40px);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .mobile-nav a {
+            flex: 1;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            border-bottom: 2px solid transparent;
+        }
+
+        .mobile-nav a.active {
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 0;
+            }
+            .mobile-nav {
+                display: flex;
+            }
+        }
+
         /* Simple "NEW" badge */
         .badge {
             display: inline-block;
@@ -147,6 +185,12 @@
     </style>
 </head>
 <body>
+
+<nav class="mobile-nav">
+    <a href="https://dom-dc.github.io/gsites-dcucic/home.html">Home</a>
+    <a href="https://dom-dc.github.io/gsites-dcucic/research.html" class="active">Research</a>
+    <a href="https://dom-dc.github.io/gsites-dcucic/cv.html">CV</a>
+</nav>
 
 <!-- Published Papers Section -->
 <div class="section">

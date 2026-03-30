@@ -8,12 +8,50 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       background: white;
       line-height: 1.4;
+      color: #333;
+    }
+
+    .cv-content {
       max-width: 800px;
       margin: 0 auto;
-      color: #333;
+      padding: 20px;
+    }
+
+    /* Mobile navigation bar */
+    .mobile-nav {
+      display: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #1a0dab;
+      width: 100%;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .mobile-nav a {
+      flex: 1;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      border-bottom: 2px solid transparent;
+    }
+
+    .mobile-nav a.active {
+      color: white;
+      border-bottom-color: rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width: 768px) {
+      .mobile-nav {
+        display: flex;
+      }
     }
 
     .cv-header {
@@ -143,6 +181,13 @@
 </head>
 
 <body>
+  <nav class="mobile-nav">
+    <a href="https://dom-dc.github.io/gsites-dcucic/home.html">Home</a>
+    <a href="https://dom-dc.github.io/gsites-dcucic/research.html">Research</a>
+    <a href="https://dom-dc.github.io/gsites-dcucic/cv.html" class="active">CV</a>
+  </nav>
+
+  <div class="cv-content">
   <div class="cv-header">
     <h1 class="cv-name">Dominic Cucic</h1>
     <div class="cv-subtitle">CV (Shortened Web Version)</div>
@@ -340,5 +385,6 @@
       </div>
     </div>
   </div>
+  </div><!-- end .cv-content -->
 </body>
 </html>

@@ -63,31 +63,32 @@
             font-style: italic;
         }
 
-        .quick-links-mobile {
+        .mobile-nav {
             display: none;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1a0dab;
+            margin: 0 -20px;
+            width: calc(100% + 40px);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
         }
 
-        .quick-link {
-            background: #1a0dab;
-            color: white;
-            padding: 12px 20px;
-            text-align: center;
+        .mobile-nav a {
+            flex: 1;
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
+            text-align: center;
+            padding: 12px 0;
             font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 44px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            border-bottom: 2px solid transparent;
         }
 
-        .quick-link:hover {
-            background: #1a0dab;
-            opacity: 0.9;
+        .mobile-nav a.active {
+            color: white;
+            border-bottom-color: rgba(255, 255, 255, 0.9);
         }
 
         .intro-text {
@@ -221,6 +222,14 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding-top: 0;
+            }
+
+            .mobile-nav {
+                display: flex;
+            }
+
             .header-section {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -230,10 +239,6 @@
                 width: 150px;
                 height: 200px;
                 margin: 0 auto;
-            }
-
-            .quick-links-mobile {
-                display: grid;
             }
 
             .research-areas {
@@ -251,6 +256,12 @@
     </style>
 </head>
 <body>
+    <nav class="mobile-nav">
+        <a href="https://dom-dc.github.io/gsites-dcucic/home.html" class="active">Home</a>
+        <a href="https://dom-dc.github.io/gsites-dcucic/research.html">Research</a>
+        <a href="https://dom-dc.github.io/gsites-dcucic/cv.html">CV</a>
+    </nav>
+
     <div class="container">
         <div class="header-section">
             <img src="https://dom-dc.github.io/gsites-dcucic/DC_foto.jpg" alt="Dominic Cucic" class="profile-photo">
@@ -258,11 +269,6 @@
             <div class="header-content">
                 <h1>Dominic Cucic</h1>
                 <div class="title">Senior Research Economist, Danmarks Nationalbank</div>
-
-                <div class="quick-links-mobile">
-                    <a href="https://sites.google.com/view/dominiccucic/research" class="quick-link" target="_top">View My Research</a>
-                    <a href="https://dom-dc.github.io/gsites-dcucic/CV_DC.pdf" class="quick-link" target="_blank">Download CV</a>
-                </div>
 
                 <div class="intro-text">
                     I study how financial intermediaries shape monetary policy transmission and financial stability. My recent research focuses on <strong>nonbank lenders</strong> and the market for bank <strong>deposits</strong>, analyzing their roles in shaping credit provision and macroeconomic outcomes. My work on nonbank lending is forthcoming at <em><a href="https://dom-dc.github.io/gsites-dcucic/CG_NonbankLending_accepted.pdf" target="_blank">The Review of Financial Studies</a></em>.
