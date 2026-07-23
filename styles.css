@@ -1,0 +1,625 @@
+/* ============================================================
+   dominiccucic.com — shared stylesheet
+   One system across home / research / cv.
+   Identity: serif display (Newsreader) + system sans body,
+   ink-navy links with a muted oxblood secondary, on white.
+   ============================================================ */
+
+:root {
+    --accent:      #15385c;  /* ink navy — links, active nav */
+    --accent-warm: #8a3324;  /* muted oxblood — award, NEW badge */
+    --ink:         #1a2432;  /* near-black serif headings / name */
+    --text:        #2f2f2f;  /* body text */
+    --muted:       #666;     /* secondary text */
+    --faint:       #888;     /* tertiary / captions */
+    --rule:        #e0e0e0;  /* hairlines */
+    --sep:         #8a8a8a;  /* link separators */
+    --maxw:        900px;    /* single content width, all pages */
+
+    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--sans);
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ── Links ──────────────────────────────────────────────
+   Content links carry a persistent, quiet underline for
+   scannability; nav links and paper titles stay clean until
+   hover. ──────────────────────────────────────────────── */
+a {
+    color: var(--accent);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(21, 56, 92, 0.4);
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    text-decoration-color: currentColor;
+}
+
+a:focus-visible,
+.button-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ── Navigation ─────────────────────────────────────────
+   Full-width bar; inner wrapper constrained to the content
+   column so nav items align with the content below. ────── */
+.site-nav {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 36px;
+}
+
+.nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-name {
+    font-family: var(--serif);
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 17px;
+    padding: 0 16px 0 0;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* ── Shared content wrapper ─────────────────────────────── */
+.container,
+.content-wrap,
+.cv-content {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+
+/* ── Shared section headings ────────────────────────────── */
+.section-title,
+.research-focus h2,
+.updates-section > h2,
+.contact-section h2 {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--ink);
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+}
+
+/* ============================================================
+   HOME
+   ============================================================ */
+
+/* ── Masthead ── */
+.page-home .masthead {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.page-home .masthead h1 {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.03;
+    color: var(--ink);
+}
+
+.page-home .masthead .role {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+.page-home .masthead .thesis {
+    font-family: var(--serif);
+    font-size: 23px;
+    line-height: 1.42;
+    color: var(--ink);
+    margin-top: 18px;
+    max-width: 42ch;
+}
+
+/* ── Focus band: the three research pillars ── */
+.focus-band {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+    margin-top: 44px;
+    padding-top: 30px;
+    border-top: 1px solid var(--rule);
+}
+
+.focus-item .tick {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 14px;
+}
+
+.focus-item h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+
+.focus-item p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+}
+
+/* ── Bio ── */
+.page-home .bio {
+    margin-top: 44px;
+}
+
+.intro-text {
+    line-height: 1.7;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+.updates-section {
+    margin-top: 44px;
+    padding-top: 30px;
+    border-top: 1px solid var(--rule);
+    margin-bottom: 44px;
+}
+
+.updates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.update-category h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.update-item {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #444;
+}
+
+.update-item:last-child {
+    margin-bottom: 0;
+}
+
+.update-date {
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.contact-section {
+    margin-top: 44px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+}
+
+.contact-section h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.contact-info div {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+}
+
+.disclaimer {
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+    margin-top: 44px;
+    text-align: center;
+}
+
+/* ============================================================
+   RESEARCH
+   ============================================================ */
+.section {
+    margin-bottom: 48px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+.paper-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.paper-title {
+    color: var(--accent);
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.paper-title.no-expand {
+    cursor: default;
+    color: var(--ink);
+}
+
+.paper-title:hover {
+    text-decoration: underline;
+}
+
+.paper-title.no-expand:hover {
+    text-decoration: none;
+}
+
+.paper-details {
+    color: var(--muted);
+    margin: 3px 0;
+    font-size: 15px;
+}
+
+.paper-details em {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.paper-links {
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.paper-links a,
+.paper-links .button-link {
+    color: var(--accent);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.paper-links a:hover,
+.paper-links .button-link:hover {
+    text-decoration: underline;
+}
+
+.paper-links .sep {
+    color: var(--sep);
+    margin: 0 4px;
+    user-select: none;
+}
+
+.abstract {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-left: 3px solid var(--accent);
+    line-height: 1.65;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.abstract.show {
+    display: block;
+}
+
+.presentations {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.55;
+}
+
+.award {
+    font-size: 14px;
+    color: var(--accent-warm);
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.expand-icon {
+    font-size: 12px;
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+.expand-icon.rotated {
+    transform: rotate(180deg);
+}
+
+/* Compact variant for secondary categories */
+.section.compact {
+    margin-bottom: 32px;
+}
+
+.section.compact .paper-item {
+    margin-bottom: 14px;
+    padding-bottom: 0;
+}
+
+.section.compact .paper-title {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.section.compact .paper-details {
+    font-size: 13px;
+    margin: 0;
+}
+
+/* NEW badge — folded into the warm accent system */
+.badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    background: #f7ecea;
+    color: var(--accent-warm);
+    border: 1px solid #e6cfca;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* ============================================================
+   CV
+   ============================================================ */
+.cv-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.cv-name {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 8px;
+}
+
+.cv-subtitle {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.cv-header .contact-info {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.cv-item {
+    margin-bottom: 20px;
+}
+
+.cv-item-title {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 3px;
+    color: var(--ink);
+}
+
+.cv-item-details {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.cv-item-period {
+    color: var(--faint);
+    font-size: 14px;
+    float: right;
+}
+
+.paper-link {
+    color: var(--accent);
+}
+
+.research-fields {
+    font-size: 16px;
+    color: var(--muted);
+    font-style: italic;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.skill-category {
+    font-size: 14px;
+}
+
+.skill-category strong {
+    color: var(--ink);
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .title-institution {
+        display: block;
+    }
+
+    .nav-name {
+        display: none;
+    }
+
+    .nav-inner {
+        padding: 0;
+    }
+
+    .nav-links {
+        flex: 1;
+        width: 100%;
+    }
+
+    .nav-links a {
+        flex: 1;
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    .page-home .masthead {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 22px;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+    }
+
+    .page-home .masthead .thesis {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .focus-band {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .focus-item {
+        text-align: center;
+    }
+
+    .focus-item .tick {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .updates-grid,
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .paper-item {
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+    }
+
+    .section {
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .cv-name {
+        font-size: 28px;
+    }
+
+    .cv-item-period {
+        float: none;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .expand-icon {
+        transition: none;
+    }
+}
